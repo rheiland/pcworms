@@ -38,11 +38,11 @@
     <save>
         <folder>tmpdir</folder>
         <full_data>
-            <interval units="min">360</interval>
+            <interval units="min">30</interval>
             <enable>true</enable>
         </full_data>
         <SVG>
-            <interval units="min">360</interval>
+            <interval units="min">30</interval>
             <enable>true</enable>
         </SVG>
         <legacy_data>
@@ -221,7 +221,7 @@
 
     <user_parameters>
         <random_seed type="int" units="dimensionless" description="">0</random_seed>
-        <number_of_cells type="int" units="none" description="initial number of cells (for each cell type)">250</number_of_cells>
+        <number_of_cells type="int" units="none" description="initial number of cells (for each cell type)">25</number_of_cells>
         <attachment_elastic_constant type="double" units="1/min" description="strength of the spring-like adhesion for attached cells">0.03</attachment_elastic_constant>
         <head_migration_direction type="double" units="none" description="+1: grad(signal). -1: -grad(signal)">-1</head_migration_direction>
         <head_migration_speed type="double" units="micron/min" description="migration speed for head cells">0.75</head_migration_speed>
