@@ -272,7 +272,8 @@ class PhysiCellXMLCreator(QWidget):
             # model_name = "rules"
             if self.nanohub_flag:
                 # model_name = "rules"
-                model_name = "template"
+                # model_name = "template"
+                model_name = "mymodel"
 
                 #------- copy the empty rules.csv needed for template
                 tool_dir = os.environ['TOOLPATH']  # rwh: Beware! this is read-only
@@ -283,8 +284,8 @@ class PhysiCellXMLCreator(QWidget):
                 shutil.copy(rules_file0, rules_file1)
 
                 # for biorobots
-                rules_file1 = os.path.join(self.home_dir,"bots_rules.csv")
-                shutil.copy(rules_file0, rules_file1)
+                # rules_file1 = os.path.join(self.home_dir,"bots_rules.csv")
+                # shutil.copy(rules_file0, rules_file1)
 
             self.current_xml_file = os.path.join(self.studio_config_dir, model_name + ".xml")
 
@@ -669,10 +670,11 @@ PhysiCell Studio is provided "AS IS" without warranty of any kind. &nbsp; In no 
         #-----
         file_menu = menubar.addMenu('&File')
         if self.nanohub_flag:
-            model_menu = menubar.addMenu('&Model')
-            model_menu.addAction("template", self.template_cb)
-            model_menu.addAction("biorobots", self.biorobots_cb)
-            model_menu.addAction("tumor_immune", self.tumor_immune_cb)   # was "rules"
+            pass
+        #     model_menu = menubar.addMenu('&Model')
+        #     model_menu.addAction("template", self.template_cb)
+        #     model_menu.addAction("biorobots", self.biorobots_cb)
+        #     model_menu.addAction("tumor_immune", self.tumor_immune_cb)   # was "rules"
 
             # model_menu.addAction("celltypes3", self.celltypes3_nanohub_cb)
             # model_menu.addAction("pred_prey_farmer", self.pred_prey_nanohub_cb)
@@ -682,7 +684,7 @@ PhysiCell Studio is provided "AS IS" without warranty of any kind. &nbsp; In no 
             # pass
 
         #--------------
-        else:
+        else:  # not nanoHUB
             # file_menu = menubar.addMenu('&File')
             # file_menu.addAction("New (template)", self.new_model_cb, QtGui.QKeySequence('Ctrl+n'))
             file_menu.addAction("Open", self.open_as_cb, QtGui.QKeySequence('Ctrl+o'))
@@ -1175,6 +1177,7 @@ PhysiCell Studio is provided "AS IS" without warranty of any kind. &nbsp; In no 
 
 
     #----------------------
+    #----- NB! these aren't used here
     def template_cb(self):
         self.load_model("template")
         if self.studio_flag:
@@ -1616,7 +1619,8 @@ def main():
         parser.add_argument("-c", "--config", type=str, help="config file (.xml)")
         parser.add_argument("-e", "--exec", type=str, help="executable model")
 
-        exec_file = 'project'  # for template sample
+        # exec_file = 'project'  # for template sample
+        exec_file = 'mymodel'  # for template sample
 
         # args = parser.parse_args()
         args, unknown = parser.parse_known_args()

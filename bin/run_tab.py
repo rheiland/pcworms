@@ -97,7 +97,8 @@ class RunModel(QWidget):
         hbox.addWidget(QLabel("Exec:"))
         self.exec_name = QLineEdit()
         if self.nanohub_flag:
-            self.exec_name.setText('myproj')
+            # self.exec_name.setText('myproj')
+            self.exec_name.setText('mymodel')
             # self.exec_name.setEnabled(False)
         else:
             # self.exec_name.setText('../myproj')
