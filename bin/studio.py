@@ -283,6 +283,12 @@ class PhysiCellXMLCreator(QWidget):
                 rules_file1 = os.path.join(self.home_dir,"rules.csv")
                 shutil.copy(rules_file0, rules_file1)
 
+
+                cells_file0 = os.path.join(tool_dir,'data',"mycells.csv")
+                # for template
+                cells_file1 = os.path.join(self.home_dir,"mycells.csv")
+                shutil.copy(cells_file0, cells_file1)
+
                 # for biorobots
                 # rules_file1 = os.path.join(self.home_dir,"bots_rules.csv")
                 # shutil.copy(rules_file0, rules_file1)
