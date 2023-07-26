@@ -92,7 +92,7 @@ PhysiCell_OBJECTS := $(BioFVM_OBJECTS)  $(pugixml_OBJECTS) $(PhysiCell_core_OBJE
 ALL_OBJECTS := $(PhysiCell_OBJECTS) custom.o
 
 # compile the project 
-all: main.cpp $(ALL_OBJECTS0) $(ALL_OBJECTS1)
+all: main.cpp $(ALL_OBJECTS)
 	$(COMPILE_COMMAND) -o $(PROGRAM_NAME) $(ALL_OBJECTS) main.cpp 
 
 # PhysiCell core components	
