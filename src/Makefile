@@ -193,8 +193,8 @@ custom.o: ./custom_modules/custom.cpp
 # next targets for nanoHUB
 install: 
 	$(MODINIT); $(MODCMD); make all
-#	install --mode 0755 -D $(PROGRAM_NAME) $(BIN)/$(PROGRAM_NAME)
-	install --mode 0755 -D $(PROGRAM_NAME) ../$(PROGRAM_NAME)
+	install --mode 0755 -D $(PROGRAM_NAME) $(BIN)/$(PROGRAM_NAME)
+#	install --mode 0755 -D $(PROGRAM_NAME) ../$(PROGRAM_NAME)
 
 distclean: clean
 	rm -f $(BIN)/$(PROGRAM_NAME)
